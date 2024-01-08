@@ -2,6 +2,9 @@
 
 Django Employee Management System is a web application built with Django that allows organizations to manage their employee information. It provides a centralized platform for HR teams to keep track of employee details, including personal information, job roles, salary, department, hiring date and contact information.
 
+![screenshot](https://github.com/Prasad981998/EmployeeManagementSystem/blob/master/screenshot1.PNG)
+*Caption: This is home page.*
+
 ## Features
 
 - **User Authentication:** Secure login and registration system for authorized access.
