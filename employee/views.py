@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import Employee,Role,Department
 from .forms import AddEmployee   
 from django.http import HttpResponse 
+from django.shortcuts import redirect
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -16,7 +18,10 @@ def add_emp(request):
         fm=AddEmployee(request.POST)
         if fm.is_valid():
             fm.save()
-            return HttpResponse("Employee Added Successfully") 
+            #return HttpResponse("Employee Added Successfully") 
+            #return redirect("index")
+            messages.success(request,"Employee Added Successfully")
+            fm=AddEmployee()
     else:
         fm=AddEmployee()
     return render(request,'employee/add_emp.html',{'form':fm})
@@ -26,7 +31,9 @@ def remove_emp(request,emp_id=0):
         try:
             employee_to_be_removed=Employee.objects.get(id=emp_id)
             employee_to_be_removed.delete()
-            return HttpResponse("employee deleted successfully")
+            #return HttpResponse("employee deleted successfully")
+            #return redirect("index")
+            messages.success(request,"Employee Removed Successfully")  
         except:
             return HttpResponse("please enter valid id")
     emps=Employee.objects.all()
