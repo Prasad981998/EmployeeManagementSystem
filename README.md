@@ -65,3 +65,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Special thanks to the Django community for their amazing framework.
 - Icons used in the project are provided by [FontAwesome](https://fontawesome.com/).
 - apecial thanks to bootstrap.
+
+## NOTE
+- This project is in development phase many functionalities are in process to update.
