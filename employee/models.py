@@ -22,5 +22,5 @@ class Employee(models.Model):
     bonus=models.IntegerField(default=0)
     role=models.ForeignKey(Role, on_delete=models.CASCADE)
     phone=models.IntegerField(default=0)
-    hire_date=models.DateField()
+    hire_date=models.DateField(auto_now=False, auto_now_add=False)
 

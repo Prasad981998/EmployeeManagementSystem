@@ -18,8 +18,6 @@ def add_emp(request):
         fm=AddEmployee(request.POST)
         if fm.is_valid():
             fm.save()
-            #return HttpResponse("Employee Added Successfully") 
-            #return redirect("index")
             messages.success(request,"Employee Added Successfully")
             fm=AddEmployee()
     else:
@@ -31,8 +29,6 @@ def remove_emp(request,emp_id=0):
         try:
             employee_to_be_removed=Employee.objects.get(id=emp_id)
             employee_to_be_removed.delete()
-            #return HttpResponse("employee deleted successfully")
-            #return redirect("index")
             messages.success(request,"Employee Removed Successfully")  
         except:
             return HttpResponse("please enter valid id")
